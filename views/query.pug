@@ -1,0 +1,35 @@
+extends layout
+
+block content
+
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        a.navbar-brand(href='/') Express Warehouse
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse
+            ul.navbar-nav
+                li.nav-item
+                    a.nav-link(href='/') Submit
+                li.nav-item.active
+                    a.nav-link(href='/query')
+                        | Query
+                        span.sr-only (current)
+                li.nav-item
+                    a.nav-link(href='/delete') Delete
+
+
+    div(class="jumbotron text-center" id="div")
+        h1 Express Warehouse
+        p Tera tiers of storage
+    div(class = "container")
+        button(class='btn btn-primary' id='query_all_btn') Query all products
+        button(class='btn btn-primary' id='query_outofstock_btn') Query out of stock products
+        button(class='btn btn-primary' id='query_pos_btn') Query position of products
+        div(id="target")
+    #page-content
+        .container.text-center
+            .row.justify-content-center
+                .col-md-7
+    footer#sticky-footer.py-4.bg-dark.text-white-50
+        .container.text-center
+            small Copyright &copy; Express Warehouse

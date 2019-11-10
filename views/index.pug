@@ -1,0 +1,62 @@
+extends layout
+
+
+block content
+
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        a.navbar-brand(href='/') Express Warehouse
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse
+            ul.navbar-nav
+                li.nav-item.active
+                    a.nav-link(href='/')
+                        | Submit
+                        span.sr-only (current)
+                li.nav-item
+                    a.nav-link(href='/query') Query
+                li.nav-item
+                    a.nav-link(href='/delete') Delete
+    //Submit form
+    div(class="jumbotron text-center" id="div")
+        h1 Express Warehouse
+        p Tera tiers of storage
+    div(class = "container-fluid")
+      h1 Submit a product:
+      form(method='POST' action='/submit')
+        div.form-group
+
+            label(for='shelf_id') Shelf ID (1-10):
+            input#shelf_id.form-control(type='text', placeholder='ID of the shelf the product is stored at', name='shelf_id', required='')
+
+            label(for='product_name') Product Name:
+            input#product_name.form-control(type='text', placeholder='Name of the product', name='product_name')
+
+            label(for='stored_at_row') Row Number (1-2):
+            input#stored_at_row.form-control(type='text', placeholder='The row number of the shelf for the item to be placed at', name='stored_at_row', required='')
+
+            label(for='stored_at_column') Column Number (1-10):
+            input#stored_at_column.form-control(type='text', placeholder='The column number of the shelf for the item to be placed at', name='stored_at_column', required='')
+
+            label(for='quantity') Amount:
+            input#quantity.form-control(type='text', placeholder='The amount of items being added', name='quantity', required='')
+
+            label Does the product need to be cooled or guarded?:
+            div(class = "radio_left")
+                input#cooled.form-control(type='radio', name='protected_or_cooled', value='cooled')
+                | Cooled
+                input#protected.form-control(type='radio', name='protected_or_cooled', value='protected')
+                | Protected
+                input#neither.form-control(type='radio', name='protected_or_cooled', value='neither', checked='checked')
+                | Neither
+
+        button.btn.btn-primary(type ='submit') Submit data
+
+    #page-content
+        .container.text-center
+            .row.justify-content-center
+                .col-md-7
+    footer#sticky-footer.py-4.bg-dark.text-white-50
+        .container.text-center
+            small Copyright &copy; Express Warehouse
+

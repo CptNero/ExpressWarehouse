@@ -1,0 +1,47 @@
+extends layout
+
+
+block content
+
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        a.navbar-brand(href='/') Express Warehouse
+
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse
+            ul.navbar-nav
+                li.nav-item
+                    a.nav-link(href='/') Submit
+                li.nav-item
+                    a.nav-link(href='/query') Query
+                li.nav-item.active
+                    a.nav-link(href='/delete')
+                        | Delete
+                        span.sr-only (current)
+
+    div(class="jumbotron text-center" id="div")
+        h1 Express Warehouse
+        p Tera tiers of storage
+    div(class = "container-fluid")
+        h1 Delete a product by name
+        form(method='POST' action='delete/delete_by_name')
+            div.form-group
+                label(for='delete_by_name') Product Name:
+                input#delete_by_name.form-control(type='text', placeholder='ID of the shelf the product is stored at', name='delete_by_name', required='')
+            button.btn.btn-primary(type ='submit') Delete by Name
+
+        h1 Delete by Serial ID
+        form(method='POST' action='delete/delete_by_id')
+            div.form-group
+                label(for='delete_by_id') Serial ID:
+                input#delete_by_id.form-control(type='text', placeholder='ID of the shelf the product is stored at', name='delete_by_id', required='')
+            button.btn.btn-primary(type ='submit') Delete by ID
+
+    #page-content
+        .container.text-center
+            .row.justify-content-center
+                .col-md-7
+    footer#sticky-footer.py-4.bg-dark.text-white-50
+        .container.text-center
+            small Copyright &copy; Express Warehouse
+
