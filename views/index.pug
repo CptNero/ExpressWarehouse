@@ -11,7 +11,7 @@ block content
             ul.navbar-nav
                 li.nav-item.active
                     a.nav-link(href='/')
-                        | Submit
+                        | Submit/Modify
                         span.sr-only (current)
                 li.nav-item
                     a.nav-link(href='/query') Query
@@ -25,6 +25,9 @@ block content
       h1 Submit a product:
       form(method='POST' action='/submit')
         div.form-group
+
+            label(for='serial_id') Serial ID (1-9,0-9,0-9) FORMAT:
+            input#serial_id.form-control(type='text', placeholder='Serial ID of the product', name='serial_id', required='')
 
             label(for='shelf_id') Shelf ID (1-10):
             input#shelf_id.form-control(type='text', placeholder='ID of the shelf the product is stored at', name='shelf_id', required='')

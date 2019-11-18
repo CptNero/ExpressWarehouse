@@ -11,7 +11,7 @@ block content
         #navbarNav.collapse.navbar-collapse
             ul.navbar-nav
                 li.nav-item
-                    a.nav-link(href='/') Submit
+                    a.nav-link(href='/') Submit/Modify
                 li.nav-item
                     a.nav-link(href='/query') Query
                 li.nav-item.active
@@ -27,14 +27,14 @@ block content
         form(method='POST' action='delete/delete_by_name')
             div.form-group
                 label(for='delete_by_name') Product Name:
-                input#delete_by_name.form-control(type='text', placeholder='ID of the shelf the product is stored at', name='delete_by_name', required='')
+                input#delete_by_name.form-control(type='text', placeholder='ID of the shelf the product is stored at', name='delete_by_name')
             button.btn.btn-primary(type ='submit') Delete by Name
 
         h1 Delete by Serial ID
         form(method='POST' action='delete/delete_by_id')
             div.form-group
                 label(for='delete_by_id') Serial ID:
-                input#delete_by_id.form-control(type='text', placeholder='ID of the shelf the product is stored at', name='delete_by_id', required='')
+                input#delete_by_id.form-control(type='text', placeholder='ID of the shelf the product is stored at', name='delete_by_id')
             button.btn.btn-primary(type ='submit') Delete by ID
 
     #page-content

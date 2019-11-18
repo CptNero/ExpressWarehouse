@@ -14,6 +14,8 @@ exports.deletion_by_name = function (req,res,next) {
         if(err) throw err;
         console.log("Disconnected!");
     });
+
+    res.render('delete');
 };
 
 exports.deletion_by_id = function (req,res,next) {
@@ -31,4 +33,5 @@ exports.deletion_by_id = function (req,res,next) {
         console.log("Disconnected!");
     });
 
+    res.render('delete')
 };

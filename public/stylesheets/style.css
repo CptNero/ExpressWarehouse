@@ -29,6 +29,16 @@ nav{
   width: 100%;
 }
 
+.btn{
+  background-color: blue !important;
+  border-color: blue !important;
+
+}
+
+.btn:hover{
+  background-color: grey !important;
+}
+
 .kekreszclass {
   position: absolute;
   top: 0;

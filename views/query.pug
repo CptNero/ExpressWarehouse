@@ -9,7 +9,7 @@ block content
         #navbarNav.collapse.navbar-collapse
             ul.navbar-nav
                 li.nav-item
-                    a.nav-link(href='/') Submit
+                    a.nav-link(href='/') Submit/Modify
                 li.nav-item.active
                     a.nav-link(href='/query')
                         | Query
@@ -23,8 +23,21 @@ block content
         p Tera tiers of storage
     div(class = "container")
         button(class='btn btn-primary' id='query_all_btn') Query all products
+        br
         button(class='btn btn-primary' id='query_outofstock_btn') Query out of stock products
+        br
         button(class='btn btn-primary' id='query_pos_btn') Query position of products
+        br
+        button(class='btn btn-primary' id='query_full_shelves_btn') Query full shelves
+        br
+        button(class='btn btn-primary' id='query_sector_categories_btn') Query categories by sectors
+        br
+        button(class='btn btn-primary' id='query_warehouse_btn') Query normal warehouses
+        br
+        button(class='btn btn-primary' id='query_cooled_warehouse_btn') Query cooled warehouses
+        br
+        button(class='btn btn-primary' id='query_secured_warehouse_btn') Query secured warehouses
+        br
         div(id="target")
     #page-content
         .container.text-center

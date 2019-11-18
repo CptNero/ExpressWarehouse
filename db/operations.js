@@ -3,6 +3,7 @@ let db = require('../db/connection');
 
 exports.submit_product = function (req, res, next) {
     db.initiate_connection();
+    var serial_id = req.body.serial_id;
     var shelf_id = req.body.shelf_id;
     var product_name = req.body.product_name;
     var row_number = req.body.stored_at_row;
@@ -26,8 +27,8 @@ exports.submit_product = function (req, res, next) {
     var minute = new Date().getMinutes();
 
     let con = db.get_con();
-    var statement = `INSERT INTO product_item (shelf_id, product_name, stored_at_row, stored_at_column, year, month, day, hour, minute, quantity, is_cooled, is_guarded)` +
-        ` VALUES (${shelf_id}, '${product_name}', ${row_number}, ${column_number}, ${year}, ${month}, ${day}, ${hour}, ${minute}, ${amount}, ${is_cooled}, ${is_guarded})`;
+    var statement = `REPLACE product_item (serial_id,shelf_id, product_name, stored_at_row, stored_at_column, year, month, day, hour, minute, quantity, is_cooled, is_guarded) 
+                     VALUES (${serial_id}, ${shelf_id}, '${product_name}', ${row_number}, ${column_number}, ${year}, ${month}, ${day}, ${hour}, ${minute}, ${amount}, ${is_cooled}, ${is_guarded})`;
 
     con.query(statement, function (err, result){
             if (err) throw err;
@@ -39,4 +40,6 @@ exports.submit_product = function (req, res, next) {
         if(err) throw err;
         console.log("Disconnected!");
     });
+    res.render('index');
+    res.end();
 };
