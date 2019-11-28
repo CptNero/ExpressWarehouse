@@ -1,0 +1,33 @@
+extends layout
+
+block content
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        a.navbar-brand(href='/') Express Warehouse
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse
+            ul.navbar-nav
+                li.nav-item
+                    a.nav-link(href='/') Submit/Modify
+                li.nav-item
+                    a.nav-link(href='/query') Query
+
+                li.nav-item
+                    a.nav-link(href='/delete') Delete
+                li.nav-item.active
+                    a.nav-link(href='/graph') Graph
+
+
+
+    div(class="jumbotron text-center" id="div")
+        h1 Express Warehouse
+        p Tera tiers of storage
+
+    button(class='btn btn-primary' id='btn_get_stock') Render graph for sales
+
+    canvas#myChart
+
+
+
+
+

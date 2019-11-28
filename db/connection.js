@@ -1,7 +1,7 @@
 var mysql = require('mysql');
 let con;
 
-exports.initiate_connection = function () {
+exports.initiate_connection = function (req,res,next) {
     con = mysql.createConnection({
         host: "eu-cdbr-west-02.cleardb.net",
         user: "be396ba67eb2ac",
